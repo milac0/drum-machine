@@ -11,7 +11,7 @@ const DrumPad = React.forwardRef((props, ref) => (
         ref={ref}
             src={props.src}
             className="clip"
-            id={`id${props.id}`}
+            id={props.id}
         ></audio>
     </div>
 )

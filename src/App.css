@@ -1,22 +1,35 @@
 #drum-machine {
-  margin: 0 auto;
-  width: 25rem;
-  height: 25rem;
+  height: 100%;
+  width: 100%;
 }
 
+
 #drum-pads {
-  width: 100%;
+  width: 40%;
+  height: auto;
+  margin: 0 auto;
+  padding: 10px;
+  position: relative;
+  margin: 0 auto;
+  align-self: auto;
   display: inline-grid;
+}
+
+#display {
+  margin: 0 auto;
+  height: 30px;
+  width: 200px;
+  padding: 10px;
+  background: #FDC8C8;
+  text-align: center;
 }
 
 .drum-pad {
   text-align: center;
   border: 1px solid black;
   padding: 1rem 1.5rem;
-  height: 
-
-
 }
+
 #W {
   grid-column-start: 2;
   grid-column-end: 3;

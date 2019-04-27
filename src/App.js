@@ -53,15 +53,38 @@ const drums = [
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
-    this.getOrCreateRef = this.getOrCreateRef.bind(this);
     this.references = {};
-
+    this.state = { display: ''};
+    this.keyPressRef = React.createRef();
+    this.handleClick = this.handleClick.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.getOrCreateRef = this.getOrCreateRef.bind(this);
+    this.setDisplay = this.setDisplay.bind(this);
   };
 
-  handleClick = (a) => {
-    this.references[a].current.play();
-    this.references[a].current.currentTime = 0;
+  componentDidMount(){
+    this.keyPressRef.current.focus();
+  }
+
+  handleClick = (id) => {
+    //console.log(this.references[id].current);
+    this.references[id].current.play();
+    this.references[id].current.currentTime = 0;
+    this.setDisplay(id);
+  };
+
+  handleKeyDown = (e) => {
+    if(this.references.hasOwnProperty(e.key.toUpperCase())){
+    this.references[e.key.toUpperCase()].current.play();
+    this.references[e.key.toUpperCase()].current.currentTime = 0;
+  }
+  this.setDisplay(e.key.toUpperCase());
+  };
+
+  setDisplay(id){
+    const display = drums.filter(elem=>elem.id===id)[0].text;
+    console.log(display);
+    //this.setState({display});
   };
 
    getOrCreateRef(id){
@@ -72,15 +95,22 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id="drum-machine">
-        <div id="display"></div>
+      <div 
+      id="drum-machine"
+        ref={this.keyPressRef}
+        onKeyDown={this.handleKeyDown}
+        tabIndex="0"
+      >
+        <div id="display">
+          <p>{this.state.display}</p>
+        </div>
         <div id="drum-pads">
-        {drums.map((elem, i) =>
-          (<DrumPad
-            name={elem.text}
-            ref={this.getOrCreateRef(elem.id)}
-            clickHandler={this.handleClick}
-            id={elem.id}
+          {drums.map((elem, i) =>
+            (<DrumPad
+              name={elem.text}
+              ref={this.getOrCreateRef(elem.id)}
+              clickHandler={this.handleClick}
+              id={elem.id}
             src={elem.src}
             key={i}
           />)
