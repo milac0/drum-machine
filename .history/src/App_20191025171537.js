@@ -6,7 +6,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.references = {};
-    this.state = { display: "sound record" };
+    this.state = { display: "" };
     this.keyPressRef = React.createRef();
     this.handleClick = this.handleClick.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
@@ -53,28 +53,28 @@ class App extends React.Component {
   render() {
     return (
       <Fragment>
-        <div
-          id="drum-machine"
-          ref={this.keyPressRef}
-          onKeyDown={this.handleKeyDown}
-          tabIndex="0"
-        >
-          <div id="drum-pads">
-            {drums.map((elem, i) => (
-              <DrumPad
-                name={elem.text}
-                ref={this.getOrCreateRef(elem.id)}
-                clickHandler={this.handleClick}
-                id={elem.id}
-                src={elem.src}
-                key={i}
-              />
-            ))}
-          </div>
-        </div>
-        <div id="display">
-          <p>{this.state.display}</p>
-        </div>
+      <div
+        id="drum-machine"
+        ref={this.keyPressRef}
+        onKeyDown={this.handleKeyDown}
+        tabIndex="0"
+      >
+
+
+        {/* <div id="drum-pads"> */}
+          {drums.map((elem, i) => (
+            <DrumPad
+              name={elem.text}
+              ref={this.getOrCreateRef(elem.id)}
+              clickHandler={this.handleClick}
+              id={elem.id}
+              src={elem.src}
+              key={i}
+            />
+          ))}
+        {/* </div> */}
+      </div>
+      <p id="display">{this.state.display}</p>
       </Fragment>
     );
   }
@@ -113,7 +113,7 @@ const drums = [
   },
   {
     id: "D",
-    text: "absolute kikdrum",
+    text: "absolute insane kikdrum",
     src:
       "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Kicks/69[kb]absolutely-insane-kikdrum.wav.mp3"
   },

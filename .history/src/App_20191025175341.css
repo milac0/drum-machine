@@ -1,0 +1,63 @@
+#drum-pads {
+  max-width: 600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.drum-pad {
+  height: auto;
+  margin: 0.5em;
+  border: 2px solid black;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.drum-pad p {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+#display {
+  background: #f8f9f8;
+  width: 260px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 20px;
+}
+
+#display p {
+  padding: 2em;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+/* #display {
+  margin: 0 auto;
+  height: 30px;
+  width: 200px;
+  padding: 10px;
+  background: #FDC8C8;
+  text-align: center;
+}
+
+.drum-pad {
+  width: 240px;
+  text-align: center;
+  border: 1px solid black;
+  padding: 1rem 1.5rem;
+}
+
+#W {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+#E {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+.drum-pad:hover {
+  cursor: pointer;
+} */

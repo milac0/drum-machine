@@ -1,0 +1,43 @@
+#drum-machine {
+  height: 100%;
+  width: 100%;
+}
+
+#drum-pads {
+  width: 180px;
+  height: 80px;
+  margin: 0;
+  padding: 10px;
+  position: relative;
+  margin: 0 auto;
+  display: inline-grid;
+}
+
+#display {
+  margin: 0 auto;
+  height: 30px;
+  width: 200px;
+  padding: 10px;
+  background: #FDC8C8;
+  text-align: center;
+}
+
+.drum-pad {
+  text-align: center;
+  border: 1px solid black;
+  padding: 1rem 1.5rem;
+}
+
+#W {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+#E {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+.drum-pad:hover {
+  cursor: pointer;
+}

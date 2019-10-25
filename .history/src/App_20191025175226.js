@@ -6,7 +6,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.references = {};
-    this.state = { display: "sound record" };
+    this.state = { display: "" };
     this.keyPressRef = React.createRef();
     this.handleClick = this.handleClick.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);

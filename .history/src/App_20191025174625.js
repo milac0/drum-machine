@@ -6,7 +6,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.references = {};
-    this.state = { display: "sound record" };
+    this.state = { display: "" };
     this.keyPressRef = React.createRef();
     this.handleClick = this.handleClick.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
@@ -113,7 +113,7 @@ const drums = [
   },
   {
     id: "D",
-    text: "absolute kikdrum",
+    text: "absolute insane kikdrum",
     src:
       "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Kicks/69[kb]absolutely-insane-kikdrum.wav.mp3"
   },

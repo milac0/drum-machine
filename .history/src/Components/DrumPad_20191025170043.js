@@ -7,7 +7,7 @@ const DrumPad = React.forwardRef((props, ref) => (
     onClick={() => props.clickHandler(props.id)}
     text={props.name}
   >
-    <p>{props.id}</p>
+    {props.id}
     <audio ref={ref} src={props.src} className="clip" id={props.id}></audio>
   </div>
 ));
